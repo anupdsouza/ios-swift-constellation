@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var blinking: Bool = false
+    @State private var percentage: CGFloat = 0
     
     var body: some View {
         ZStack {
@@ -48,15 +49,20 @@ struct ContentView: View {
                         addStar(in: &path, radius: 2.5, posX: size*0.63, posY: size*0.505)
                     }
                     .fill(Color(uiColor: UIColor(red: 223/255.0, green: 224/255.0, blue: 161/255.0, alpha: 1.0)))
-                    .opacity(blinking ? 1.0 : 0.5)
+                    .opacity(blinking ? 1.0 : 0.6)
                     .animation(.easeInOut(duration: 1.0).delay(2.0).repeatForever(autoreverses: true), value: blinking)
                 }
                 .frame(width: 200, height: 200)
                 .position(x: geometryProxy.frame(in: .local).midX, y: geometryProxy.frame(in: .local).midY)
                 .overlay {
                     SwiftBird()
+                        .trim(from: 0, to: percentage)
                         .stroke(Color.white, style: StrokeStyle(lineWidth: 1, lineCap: .round, lineJoin: .round, dash: [3.0]))
                         .frame(width: 200, height: 200)
+                        .animation(.easeInOut(duration: 5.0), value: percentage)
+                        .onAppear {
+                            self.percentage = 1.0
+                        }
                 }
             }
         }

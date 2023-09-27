@@ -4,4 +4,4 @@ Creating a night sky scene with the [Swift logo bird](https://github.com/anupdso
 # Result
 
 
-<img width="200" alt="Screenshot 2023-09-27 at 5 38 23 PM" src="https://github.com/anupdsouza/ios-swift-constellation/assets/103429618/1a4ef421-b4b3-4ae8-994a-0de217375a55">
+<img width="200" alt="Result" src="https://github.com/anupdsouza/ios-swift-constellation/assets/103429618/25a8db13-0fda-4f0d-9850-4c692d8ebb4b">
